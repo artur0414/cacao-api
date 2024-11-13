@@ -1,0 +1,33 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Dependencias
+package-lock.json
+yarn.lock
+
+# Archivos de entorno
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Directorios de compilación
+dist
+build
+
+# Archivos específicos de VS Code
+.vscode/
+
+# Archivos específicos del editor
+.DS_Store
+Thumbs.db
+
+# Omite archivos de configuración específicos
+app.http
+cacao-api-imagenes-0cc2224c0137.json
+
+

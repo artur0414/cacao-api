@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2016", // ECMAScript versión 2016
+    "rootDir": "./src", // Directorio raíz de los archivos TypeScript
+    "outDir": "./dist", // Directorio de salida de los archivos JavaScript
+    "module": "commonjs", // Sistema de módulos CommonJS
+    "moduleResolution": "node", // Resolución de módulos estilo Node.js
+    "esModuleInterop": true, // Habilita la interoperabilidad de módulos ES6 y CommonJS
+    "forceConsistentCasingInFileNames": true, // Obliga a que los nombres de archivo tengan la misma capitalización
+    "strict": true, // Habilita todas las opciones de comprobación estricta de TypeScript
+    "skipLibCheck": true, // Evita la comprobación de las definiciones de TypeScript en los archivos JavaScript
+    "types": ["mocha"]
+  },
+  "include": ["src/**/*", "test/**/*"],   // Incluye las carpetas src y test
+  "exclude": ["node_modules"]             // Excluye la carpeta node_modules
+}
