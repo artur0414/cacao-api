@@ -35,7 +35,6 @@ export class PlagasEnfermedadesSequelize extends Model {
             PlagasEnfermedadesSequelize.belongsTo(ClonSequilize, { foreignKey: 'nombre_clon', targetKey: 'nombre_clon', as: 'Clones' });
 
         } catch (error) {
-            console.log(error)
             throw new BadRequestError('Error al inicializar el modelo de plagas y enfermedades.');
         }
     }

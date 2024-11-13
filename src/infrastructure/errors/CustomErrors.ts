@@ -63,10 +63,7 @@ export class DatabaseErrorHandler {
     // Método para manejar los errores de la base de datos
 
     procesarError(): Error {
-
-        console.log(this.error)
         
-        // console.log("procesando....", this.error);
         if (!this.isDatabaseError(this.error)) {
             return new DatabaseGenericError(this.message);
         } 

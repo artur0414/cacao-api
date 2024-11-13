@@ -151,7 +151,6 @@ export class PlantaDetallesConsultas {
             return this.ejecutarQueryConAsociacion(query);
 
         } catch (error) {
-            console.log("errir acá")
             throw new DatabaseErrorHandler(error, 'Error al obtener las plantas con sus clones.', 'PlantaDetallesConsultas').procesarError();
         } finally {
             this.closeConnection();

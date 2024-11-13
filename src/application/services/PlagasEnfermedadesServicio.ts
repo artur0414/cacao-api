@@ -48,7 +48,7 @@ export class PlagasEnfermedadesServicio{
                 const verificarSiExisteNombreClon = await this.persistencia.obtenerPlagaEnfermedadPorNombreClon(plagaEnfermedad.nombre_clon);
 
                 if(verificarSiExisteNombreClon !== null){
-                    throw new Error('El clon ya tiene plagas y enfermedades asignadas, si desea modificarlas, por favor, utilice la opción de modificar plagas y enfermedades');
+                    throw new DuplicateEntryError('El clon ya tiene plagas y enfermedades asignadas, si desea modificarlas, por favor, utilice la opción de modificar plagas y enfermedades');
                 }
 
                 plagaEnfermedadExistentes.cambiarNombreClon(plagaEnfermedad.nombre_clon!);

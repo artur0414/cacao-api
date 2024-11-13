@@ -65,7 +65,7 @@ describe('pruebas Api', () => {
     });
     
     // Crud Planta
-    plantaTest()
+    plantaTest({nombre: "Clon de prueba"});
     
     // Crud Clon
     clonTest({variedad: "Variedad de prueba"})

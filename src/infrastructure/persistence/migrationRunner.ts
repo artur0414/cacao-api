@@ -8,7 +8,7 @@ async function runMigration() {
   const connection = await createConnection(dbConfig);
 
   // Leer el archivo de migración
-  const migrationSQL = await readFile('./infrastructure/persistence/2024_10_23_create_cacao_db.sql', 'utf8');
+  const migrationSQL = await readFile('./src/infrastructure/persistence/2024_10_23_create_cacao_db.sql', 'utf8');
   
   // Separar las instrucciones SQL
   const sqlStatements = migrationSQL.split(';').map(stmt => stmt.trim()).filter(stmt => stmt.length > 0);
@@ -27,7 +27,7 @@ async function runSeed() {
   const connection = await createConnection(dbConfig);
   
   // Leer el archivo de semillas
-  const seedSQL = await readFile('./infrastructure/persistence/cacao_seeds.sql', 'utf8');
+  const seedSQL = await readFile('./src/infrastructure/persistence/cacao_seeds.sql', 'utf8');
   
   // Separar las instrucciones SQL
   const sqlStatements = seedSQL.split(';').map(stmt => stmt.trim()).filter(stmt => stmt.length > 0);

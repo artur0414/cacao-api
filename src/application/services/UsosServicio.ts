@@ -3,7 +3,7 @@
     import { Usos } from "../../domain/models/Usos";
     import { DatabaseAdapter } from "../../infrastructure/adapters/MySqlAdapter";
     import { UsosEntity } from "../../infrastructure/entities/UsosEntity";
-    import { BadRequestError, DuplicateEntryError } from "../../infrastructure/errors/CustomErrors";
+    import { DuplicateEntryError, NotFoundError } from "../../infrastructure/errors/CustomErrors";
     import { UsosPersistencia } from "../../infrastructure/persistence/usos/UsosPersistencia";
     import { UsosDTO } from "../dtos/usos_dto";
 
@@ -37,7 +37,7 @@
             try {
                 const usosExistentes = await this.persistencia.obtenerUsosPorId(usos.id)
                 if(usosExistentes === null) {
-                    throw new BadRequestError('El uso que intenta modificar no existe')
+                    throw new NotFoundError('El uso que intenta modificar no existe')
                 }       
 
                 if(usos.nombre_clon) {

@@ -6,7 +6,7 @@ import { config } from 'dotenv';
 
 config();
 
-export const plantaTest = () => {
+export const plantaTest = ({nombre}) => {
     const apiKey = process.env.API_KEY;
     let plantaParcial: PlantaDTO & { id: string };
 
@@ -66,7 +66,7 @@ export const plantaTest = () => {
         });
 
         it('Retornará plantas con clones filtradas por nombre de clon', async () => {
-            await checkGetRequest('/api/plantas/clones', { nombre_clon: 'CCN-51' });
+            await checkGetRequest('/api/plantas/clones', { nombre_clon: nombre });
         });
 
         it('Retornará plantas con clones filtradas por variedad', async () => {
@@ -90,7 +90,7 @@ export const plantaTest = () => {
         });
 
         it('Retornará plantas con clones y detalles filtradas por nombre de clon', async () => {
-            await checkGetRequest('/api/plantas/clones/detalles', { nombre_clon: 'CCN-51' });
+            await checkGetRequest('/api/plantas/clones/detalles', { nombre_clon: nombre });
         });
 
         it('Retornará plantas con clones filtradas por límite y página', async () => {

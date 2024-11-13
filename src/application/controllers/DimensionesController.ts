@@ -42,7 +42,6 @@ export class DimensionesController {
             res.status(201).json(dimensionesCreadas);
 
         } catch (error) {
-            console.log(error)
             const eliminarImagen = new ImageManager();
             const imagenesEliminadas = await eliminarImagen.eliminarImagenes(req.body.urlName);
             if(imagenesEliminadas) {
