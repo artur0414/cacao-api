@@ -43,15 +43,15 @@ export class CondicionesClimaticasServicio {
                 throw new NotFoundError('No existen condiciones climáticas con el id proporcionado, por favor, verifique los datos');
             }
 
-            const cambios: { [key: string]: (value: string) => void } = {
-                nombre_clon: (value: string) => {
-                    const verificarSiExisteNombreClon = this.persistencia.obtenerCondicionesClimaticasPorNombreClon(value);
+            if(condicionesClimaticas.nombre_clon) {
+                const verificarSiExisteNombreClon = await this.persistencia.obtenerCondicionesClimaticasPorNombreClon(condicionesClimaticas.nombre_clon);
+                if(verificarSiExisteNombreClon !== null) {
+                    throw new DuplicateEntryError('Ya existen condiciones climáticas con el nombre de clon proporcionado, si desea modificar las condiciones climáticas, por favor dirijase al clon correspondiente');
+                }
+                condicionesClimaticasExistentes.cambiarNombreClon(condicionesClimaticas.nombre_clon);
+            }
 
-                    if(verificarSiExisteNombreClon !== null) {
-                        throw new DuplicateEntryError('El clon ya tiene condiciones climáticas asignadas, si desea modificarlas, por favor dirijase al clon correspondiente');
-                    }
-                    condicionesClimaticasExistentes.cambiarNombreClon(value)
-                },
+            const cambios: { [key: string]: (value: string) => void } = {
                 rango_altitudinal: (value: string) => condicionesClimaticasExistentes.cambiarRangoAltitudinal(value),
                 rango_luminosidad: (value: string) => condicionesClimaticasExistentes.cambiarRangoLuminosidad(value),
                 temperatura: (value: string) => condicionesClimaticasExistentes.cambiarTemperatura(value),
