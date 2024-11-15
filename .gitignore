@@ -29,6 +29,3 @@ Thumbs.db
 # Omite archivos de configuración específicos
 app.http
 cacao-api-imagenes-0cc2224c0137.json
-
-# omitir git ignore 
-.gitignore
