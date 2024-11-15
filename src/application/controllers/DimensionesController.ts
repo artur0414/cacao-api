@@ -2,9 +2,8 @@
 
 import { NotFoundError, DuplicateEntryError, DatabaseError, DatabaseGenericError, BadRequestError } from "../../infrastructure/errors/CustomErrors";
 import { Request, Response } from "express";
-import { CrearDimensiones } from "../commands/handdlers/dimensiones/CrearDimensiones";
+import { CrearDimensiones, ActualizarDimensiones } from "../commands/handdlers/dimensiones";
 import { ImageManager } from "../services/ImageManager";
-import { ActualizarDimensiones } from "../commands/handdlers/dimensiones/ActualizarDimensiones";
 
 
 export class DimensionesController {

@@ -2,11 +2,8 @@
 
 import { Request, Response } from 'express';
 import { NotFoundError, DuplicateEntryError, DatabaseError, DatabaseGenericError, BadRequestError } from '../../infrastructure/errors/CustomErrors';
-import { CrearClon } from '../commands/handdlers/clon/CrearClon';
-import { EliminarClon } from '../commands/handdlers/clon/EliminarClon';
-import { ActualizarClon } from '../commands/handdlers/clon/ActualizarClon';
-import { ListarClones } from '../queries/handdlers/clon/ListarClones';
-import { ObtenerClonesConDetalles } from '../queries/handdlers/clon/ObtenerClones';
+import { CrearClon, EliminarClon, ActualizarClon } from '../commands/handdlers/clon';
+import { ListarClones, ObtenerClonesConDetalles } from '../../application/queries/handdlers/clon';
 import { ClonesConsultasPersistencia } from '../../infrastructure/persistence/clon/ClonesConsultasPersistencia';
 
 

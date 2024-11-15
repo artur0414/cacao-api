@@ -7,20 +7,14 @@ import { Request, Response } from 'express';
 import { PlantaDTO } from '../dtos/planta_dto';
 
 // Importaciones de comandos
-import { CrearPlanta } from '../commands/handdlers/planta/CrearPlanta';
-import { EliminarPlanta } from '../commands/handdlers/planta/EliminarPlanta';
-import { ActualizarPlanta } from '../commands/handdlers/planta/ActualizarPlanta';
+import {CrearPlanta, EliminarPlanta, ActualizarPlanta} from '../commands/handdlers/planta';
 
 // Importaciones de consultas
-import { ListarPlantas } from '../queries/handdlers/plantas/ListarPlantas';
+import { ListarPlantas, ObtenerPlantasConClones, ObtenerPlantasConClonesDetalles, ObtenerPlantasEstadisticas } from '../queries/handdlers/plantas';
 
 // Importaciones de errores personalizados
 import {BadRequestError, DuplicateEntryError, NotFoundError, DatabaseGenericError, DatabaseError } from '../../infrastructure/errors/CustomErrors';
-import { ObtenerPlantasConClones } from '../queries/handdlers/plantas/ObtenerPlantasConClones';
-import { ObtenerPlantasConClonesDetalles } from '../queries/handdlers/plantas/ObtenerPlantasConClonesDetalles';
 import { PlantaDetallesConsultas } from '../../infrastructure/persistence/planta/PlantaDetallesConsultas';
-import { ObtenerPlantasEstadisticas } from '../queries/handdlers/plantas/ObtenerPlantasEstadisticas';
-
 
 
 // Controlador de la entidad Planta

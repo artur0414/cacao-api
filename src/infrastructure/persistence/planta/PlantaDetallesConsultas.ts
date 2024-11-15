@@ -10,7 +10,7 @@ import { MantenimientoSequelize } from "../../database/Sequelize models/Mantenim
 import { PlagasEnfermedadesSequelize } from "../../database/Sequelize models/PlagasEnfermedadesModel";
 import { CacaoPlanta } from "../../database/Sequelize models/PlantaModel";
 import { UsosSequelize } from "../../database/Sequelize models/UsosModel";
-import { DatabaseError, DatabaseErrorHandler } from "../../errors/CustomErrors";
+import { DatabaseErrorHandler } from "../../errors/CustomErrors";
 
 
 export class PlantaDetallesConsultas {

@@ -2,8 +2,7 @@
 
 import { Request, Response } from 'express';
 import { NotFoundError, DuplicateEntryError, DatabaseError, DatabaseGenericError, BadRequestError } from '../../infrastructure/errors/CustomErrors';
-import { CrearPlagasEnfermedades } from '../commands/handdlers/plagas enfermedades/CrearPlagasEnfermedades';
-import { ActualizarPlagasEnfermedades } from '../commands/handdlers/plagas enfermedades/ActualizarPlagasEnfermedades';
+import { CrearPlagasEnfermedades, ActualizarPlagasEnfermedades } from '../commands/handdlers/plagas enfermedades';
 
 
 export class PlagasEnfermedadesController {

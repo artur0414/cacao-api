@@ -1,11 +1,8 @@
 // Controlador para crear y actualizar condiciones climáticas
 
 import { NotFoundError, DuplicateEntryError, DatabaseError, DatabaseGenericError, BadRequestError } from "../../infrastructure/errors/CustomErrors";
-
 import { Request, Response } from "express";
-import { CrearCondicionesClimaticas } from "../commands/handdlers/condiciones climaticas/CrearCondicionesClimaticas";
-import { ActualizarCondicionesClimaticas } from "../commands/handdlers/condiciones climaticas/ActualizarCondicionesClimaticas";
-import { CondicionesClimaticas } from "../../domain/models/CondicionesClimaticas";
+import { CrearCondicionesClimaticas, ActualizarCondicionesClimaticas } from "../commands/handdlers/condiciones climaticas/";
 
 
 export class CondicionesClimaticasController {

@@ -30,4 +30,5 @@ Thumbs.db
 app.http
 cacao-api-imagenes-0cc2224c0137.json
 
-
+# omitir git ignore 
+.gitignore

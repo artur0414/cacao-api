@@ -2,8 +2,8 @@
 
 import { Request, Response } from 'express';
 import { NotFoundError, DuplicateEntryError, DatabaseError, DatabaseGenericError, BadRequestError } from '../../infrastructure/errors/CustomErrors';
-import { CrearUsos } from '../commands/handdlers/usos/CrearUsos';
-import { ActualizarUsos } from '../commands/handdlers/usos/ActualizarUsos';
+import { CrearUsos, ActualizarUsos } from '../commands/handdlers/usos';
+
 
 export class UsosController {
     constructor() {
